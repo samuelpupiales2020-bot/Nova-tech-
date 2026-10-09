@@ -1,128 +1,41 @@
-# NovaTech — Tienda de accesorios tecnológicos
+# NovaTech — tienda tecnológica
 
-**Proyecto académico de Ingeniería de Software**
+Prototipo académico responsive de una tienda de accesorios tecnológicos. HTML5, CSS3 y JavaScript, con imágenes locales incluidas en `assets/` para que el catálogo no dependa de servicios de fotografías externos.
 
-## Información del estudiante
+## Contenido
+- `index.html` / `NovaTech.html`: web principal.
+- `assets/`: fotografías recortadas de la maqueta visual generada para este concepto.
+- `manifest.json` y `sw.js`: base de Progressive Web App (PWA).
+- `Informe_NovaTech.docx`: informe académico.
+- `INFORME.md`: resumen de la memoria técnica.
 
-- **Nombre completo:** Cristian Samuel Pupiales Martínez
-- **Programa:** Ingeniería de Software
-- **Semestre:** Primero (1.er semestre)
-- **Proyecto:** Desarrollo de una página web y una experiencia móvil para una tienda de productos tecnológicos.
+## Probar en local
+La página puede abrirse con `index.html`, pero para probar el service worker/PWA se recomienda un servidor local:
 
-## Descripción
-
-NovaTech es un prototipo de comercio electrónico para mostrar accesorios tecnológicos mediante una interfaz moderna, responsive e interactiva. Su diseño utiliza una paleta oscura con detalles en verde lima, tarjetas de productos, fotografías y animaciones sutiles.
-
-## Tecnologías utilizadas
-
-- **HTML5:** estructura de la página.
-- **CSS3:** diseño visual, animaciones y adaptación a dispositivos.
-- **JavaScript:** búsqueda, filtros por categoría, favoritos de demostración y carrito de compras.
-- **ChatGPT:** asistencia con la planificación, generación y revisión del código.
-- **Git y GitHub:** control de versiones y almacenamiento del proyecto.
-- **Netlify:** alojamiento y despliegue de la página web.
-- **Progressive Web App (PWA):** configuración inicial mediante `manifest.json` y `sw.js`.
-
-## Funcionalidades
-
-- Catálogo de productos tecnológicos.
-- Búsqueda de productos.
-- Filtros por categorías.
-- Carrito de compras demostrativo.
-- Botones de favoritos.
-- Diseño adaptable a celulares, tabletas y computadores.
-- Formulario demostrativo de novedades.
-- Efectos visuales y animaciones.
-- Configuración inicial para instalación como PWA.
-
-## Estructura del proyecto
-
-```text
-NovaTech/
-├── index.html
-├── manifest.json
-├── sw.js
-├── README.md
-├── INFORME.md
-└── assets/
-    └── workspace.jpg
+```bash
+python -m http.server 8000
 ```
 
-**Nota:** conserva los archivos y carpetas que realmente existan en tu versión del proyecto. El archivo `index.html` debe estar en la raíz para el despliegue indicado.
+Después abre `http://localhost:8000` en el navegador.
 
-## Cómo ejecutar el proyecto localmente
-
-1. Descarga y descomprime el archivo ZIP.
-2. Abre la carpeta del proyecto en Visual Studio Code.
-3. Abre `index.html` en el navegador o utiliza la extensión Live Server.
-4. Prueba la búsqueda, los filtros, el carrito y la adaptación móvil.
-
-Para probar las funciones de PWA y el service worker, utiliza un servidor local o HTTPS.
-
-## Cómo subir el proyecto a GitHub
-
-Crea un repositorio vacío en GitHub. Después, abre una terminal en la carpeta del proyecto y ejecuta:
+## Publicar en GitHub + Netlify
+1. Crea un repositorio vacío en GitHub.
+2. Copia el contenido de esta carpeta a la raíz del repositorio.
+3. En la terminal dentro de la carpeta ejecuta:
 
 ```bash
 git init
 git add .
-git commit -m "feat: crear tienda web NovaTech"
+git commit -m "feat: publicar prototipo NovaTech"
 git branch -M main
-git remote add origin https://github.com/TU-USUARIO/novatech-store.git
+git remote add origin https://github.com/USUARIO/novatech-store.git
 git push -u origin main
 ```
 
-Reemplaza `TU-USUARIO` con tu usuario real de GitHub.
+Sustituye `USUARIO` por tu nombre de usuario real. Si el repositorio ya tiene remoto, verifica su dirección antes de agregar otro.
+4. En Netlify selecciona **Add new site → Import an existing project**, conecta GitHub y elige el repositorio.
+5. Deja **Build command** vacío y establece **Publish directory** como `.`.
+6. Pulsa **Deploy site** y verifica la URL pública. Los siguientes `git push` vuelven a desplegar el sitio.
 
-Si el repositorio ya tiene configurado un remoto, comprueba su configuración antes de ejecutar `git remote add origin`.
-
-## Cómo desplegar en Netlify
-
-1. Accede a Netlify.
-2. Selecciona **Add new site** o **Import an existing project**.
-3. Conecta tu cuenta de GitHub.
-4. Selecciona el repositorio `novatech-store`.
-5. Configura el comando de compilación dejándolo vacío.
-6. Establece el directorio de publicación como `.`.
-7. Selecciona **Deploy site**.
-8. Abre la URL generada y prueba la página en computador y celular.
-
-Cuando hagas cambios en GitHub y los envíes a la rama configurada, Netlify podrá desplegar la nueva versión automáticamente.
-
-## Parámetros generales
-
-- Idioma: español.
-- Moneda de presentación: pesos colombianos (COP).
-- Diseño: responsive y mobile-first.
-- Tecnologías frontend: HTML, CSS y JavaScript.
-- Estilo: tecnológico, minimalista y moderno.
-- Imágenes: recursos fotográficos externos; se requiere conexión a Internet para cargarlos.
-- Datos: productos y precios de demostración.
-
-## Prompt principal utilizado
-
-> Actúa como desarrollador frontend y especialista en UX/UI. Desarrolla una tienda web responsive llamada NovaTech para mostrar accesorios tecnológicos. Utiliza HTML5, CSS3 y JavaScript, una identidad visual moderna con fondo oscuro y detalles en verde lima, fotografías de productos, tarjetas organizadas, búsqueda, filtros, carrito de demostración, favoritos y animaciones sutiles. Aplica principios de ingeniería de software, accesibilidad básica, diseño adaptable y código mantenible. Incluye instrucciones para ejecutar y desplegar el proyecto en GitHub y Netlify. No simules pagos ni almacenamiento de datos reales.
-
-## Principios de ingeniería de software
-
-- **Modularidad:** separar estructura, estilos y comportamiento cuando la organización del proyecto lo permita.
-- **Mantenibilidad:** utilizar nombres descriptivos y documentación.
-- **Usabilidad:** facilitar la navegación y la búsqueda.
-- **Accesibilidad:** incorporar etiquetas accesibles y textos alternativos.
-- **Diseño adaptable:** facilitar el uso desde diferentes tamaños de pantalla.
-- **Pruebas:** comprobar interacciones y funcionamiento antes del despliegue.
-- **Control de versiones:** conservar los cambios del proyecto mediante Git.
-
-## Limitaciones actuales
-
-Este proyecto es un prototipo académico. El catálogo, los precios y el carrito son demostrativos. No incluye pasarela de pago, procesamiento de pedidos, autenticación, base de datos ni backend. El formulario no almacena ni envía correos electrónicos.
-
-Las fotografías remotas dependen de la disponibilidad de sus servidores y de la conexión a Internet.
-
-## Conclusión
-
-NovaTech demuestra la aplicación de tecnologías frontend y herramientas de inteligencia artificial en el desarrollo de una solución web. El proyecto permite explorar el diseño responsive, las interacciones con JavaScript, los principios básicos de ingeniería de software y el proceso de publicación mediante GitHub y Netlify.
-
-**Autor:** Christian Samuel Pupiales Martínez  
-**Programa:** Ingeniería de Software  
-**Semestre:** Primero
+## Límites de la demo
+Los productos, precios y puntuaciones son demostrativos. El carrito calcula un total de muestra, pero no crea pedidos ni procesa pagos. El formulario no guarda correos. La entrega es una web responsive con base PWA, no un APK nativo de Android/iOS.
